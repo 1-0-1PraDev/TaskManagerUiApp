@@ -15,43 +15,42 @@ const checkBox = document.querySelectorAll("input[type='checkbox']");
 const taskText = document.querySelectorAll(".task-text");
 
 let isChecked = false;
-for(let i = 0; i < checkBox.length; i++){
-  checkBox[i].addEventListener("click", function(e){
-    if(!e.target.checked){
-      taskText[i].classList.remove("active");      
-    }else{
+for (let i = 0; i < checkBox.length; i++) {
+  checkBox[i].addEventListener("click", function (e) {
+    if (!e.target.checked) {
+      taskText[i].classList.remove("active");
+    } else {
       taskText[i].classList.add("active");
     }
   });
 }
 
-
-for(let i = 0; i < select.length; i++){
-  select[i].addEventListener("click", function(e){
-    if(i == 0){
-      console.log(":cliked1")
-     list.classList.toggle("selectBx-active");
+for (let i = 0; i < select.length; i++) {
+  select[i].addEventListener("click", function (e) {
+    if (i == 0) {
+      console.log(":cliked1");
+      list.classList.toggle("selectBx-active");
       // arrowDown.style.display = "block";
-     arrowDown.classList.toggle("activate");
-    }else{
+      arrowDown.classList.toggle("activate");
+    }else if(i == 1) {
       console.log("cliked");
-        list2.classList.toggle("selectBx-active2");
+      list2.classList.toggle("selectBx-active2");
       // arrowDown.style.display = "block";
-       arrowDown2.classList.toggle("activate2");
+      arrowDown2.classList.toggle("activate2");
     }
-     
   });
 }
 
-
-for(option of options){
-  option.addEventListener("click", function(e){
-    selectText.innerHTML = e.target.textContent;                         list.classList.toggle("selectBx-active");
+for (option of options) {
+  option.addEventListener("click", function (e) {
+    selectText.innerHTML = e.target.textContent;
+    list.classList.toggle("selectBx-active");
   });
 }
 
-for(option2 of options2){
-  option2.addEventListener("click", function(e){
-    selectText2.innerHTML = e.target.textContent;     list2.classList.toggle("selectBx-active2");
+for (option2 of options2) {
+  option2.addEventListener("click", function (e) {
+    selectText2.innerHTML = e.target.textContent;
+    list2.classList.toggle("selectBx-active2");
   });
 }
